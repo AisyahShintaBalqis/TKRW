@@ -6,12 +6,12 @@ $Jenis_Kelamin = $_POST['Jenis_Kelamin'];
 $Angkatan = $_POST['Angkatan'];
 
 include ('koneksi.php');
-$koneksi = mysqli_connect('localhost', 'root', '', 'kampus');
+
 
 $sql="INSERT INTO mahasiswa (Nim, Nama, Jenis_Kelamin, Angkatan) VALUES ('$Nim ', '$Nama', '$Jenis_Kelamin', '$Angkatan')";
 
-if (mysqli_query($koneksi, $sql)) {
-	echo "Data Berhasil Di Simpan";
+if (mysqli_query($conn, $sql)) {
+	header('Location: tampilmhs.php');
 	
 }
 else{

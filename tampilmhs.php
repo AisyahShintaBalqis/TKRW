@@ -13,6 +13,7 @@ include ('koneksi.php');
 	<h1 style="text-align: center">Daftar Mahasiswa</h1>
 
 	<a href="index.php" > Beranda </a>
+	<br>
 	<a href="forminput.php" > Tambah Data </a>
 	<br>
 	<br>
@@ -40,7 +41,7 @@ include ('koneksi.php');
             echo "<td>".$data['Angkatan']."</td>";
             
              echo "<td>";
-            echo "<a href=''>Edit</a> | ";
+            echo "<a href='editmhs.php?Nim=".$data['Nim']."'>Edit</a> | ";
             echo "<a href=''>Hapus</a>";
             echo "</td>";
 
