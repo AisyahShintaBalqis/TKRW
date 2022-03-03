@@ -42,7 +42,7 @@ include ('koneksi.php');
             
              echo "<td>";
             echo "<a href='editmhs.php?Nim=".$data['Nim']."'>Edit</a> | ";
-            echo "<a href=''>Hapus</a>";
+            echo "<a href='hapus.php?Nim=".$data['Nim']."'>Hapus</a>";
             echo "</td>";
 
             echo "</tr>";
