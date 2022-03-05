@@ -15,18 +15,13 @@ include ('koneksi.php');
 
 	<div class="col-md-6 mx-auto mt-5 container">
 		<div class="card">
-			<div class="card-header bg-primary text-white">Daftar Mahasiswa</div>
-			
-
-			<a class="btn btn-primary" href="index.php"> Beranda </a>
-
-			<a class="btn btn-primary" href="forminput.php"> Tambah Data </a>
-
-			
-			<br>
-			<br>
+			<div class="card-header bg-primary text-white">Daftar Mahasiswa</div>		
 
 			<div class="card-body">
+				<div class="col-md-12 text-right">
+					<a class="btn btn-primary btn-sm" href="index.php"> Beranda </a>
+					<a class="btn btn-primary  btn-sm" href="forminput.php"> Tambah Data </a>
+				</div>
 				<table class="table table-hover">
 					<thead>
 						<tr>
@@ -44,29 +39,27 @@ include ('koneksi.php');
 
 						$sql = "SELECT * FROM mahasiswa";
 						$query = mysqli_query($conn, $sql);
-
-						while ($data = mysqli_fetch_array($query)){
-							echo "<tr>";
-
-							echo "<td>".$data['Nim']."</td>";
-							echo "<td>".$data['Nama']."</td>";
-							echo "<td>".$data['Jenis_Kelamin']."</td>";
-							echo "<td>".$data['Angkatan']."</td>";
-
-							echo "<td>";
-							echo "<a href='editmhs.php?Nim=".$data['Nim']."'>Edit</a> | ";
-							echo "<a href='hapus.php?Nim=".$data['Nim']."'>Hapus</a>";
-							echo "</td>";
-
-							echo "</tr>";
-						}
-						?>
-
+						if (mysqli_num_rows($query) > 0) {
+							while ($data = mysqli_fetch_assoc($query)) { ?>
+								<tr>
+									<td><?php echo $data['Nim'] ?></td>
+									<td><?php echo $data['Nama'] ?></td>
+									<td><?php echo $data['Jenis_Kelamin'] ?></td>
+									<td><?php echo $data['Angkatan'] ?></td>
+									<td>
+										<a class="btn btn-success" href="editmhs.php?Nim=<?php echo $data["Nim"] ?>">Edit</a>
+										<a class="btn btn-danger" href="hapus.php?Nim=<?php echo $data["Nim"] ?> ">Hapus</a>
+									</td>
+								</tr>
+							<?php }
+						} else ?>
+						
 					</tbody>
 				</table>
+				<p>Total Data: <?php echo mysqli_num_rows($query) ?> </p>
 			</div>
 
-			<p>Total: <?php echo mysqli_num_rows($query) ?> </p>
+			
 
 		</div>
 	</div>

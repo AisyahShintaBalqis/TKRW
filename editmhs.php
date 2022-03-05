@@ -47,37 +47,35 @@ if(mysqli_num_rows($query) > 0){
 
 					
 
-					<div class="form-check mb-3">
-
-					<label for="Jenis_Kelamin">Jenis Kelamin: </label>
-					<br>
-					<?php $Jenis_Kelamin = $data['Jenis_Kelamin']; ?>
-						<input class="form-check-input" type="checkbox" value="laki-laki" <?php echo ($Jenis_Kelamin == 'laki-laki') ? "checked": "" ;?>  checked>
-						<label class="form-check-label" for="flexCheckChecked">
-							Laki-Laki
-						</label>
-						<input class="form-check-input" type="checkbox" value="perempuan"<?php echo ($Jenis_Kelamin == 'perempuan') ? "checked": "" ;?> checked>
-						<label class="form-check-label" for="flexCheckChecked">
-							Perempuan
-						</label>
-					</div>
-
-					<div class="mb-3">
-						<label for="exampleFormControlangkatan" class="form-label">Angkatan</label>
-						<input type="number" class="form-control" name="Angkatan" id="exampleFormControlankatan" value="<?php echo ($data['Angkatan']); ?>">
-					</div>
-
 					
-					<input type="submit" value="Simpan" name="Simpan" />
-					<button type="submit" name="Simpan"  class="btn btn-primary">Update</button>
+					
+
+				<label for="Jenis_Kelamin">Jenis Kelamin: </label>
+				<br>
+				<?php $Jenis_Kelamin = $data['Jenis_Kelamin']; ?>
+
+				<div class="form-check">
+					<label><input type="radio" name="Jenis_Kelamin" value="Laki-Laki" <?php if($data['Jenis_Kelamin']=='L') echo 'checked'?>>Laki-laki</label>
+					<br>
+					<label><input type="radio" name="Jenis_Kelamin" value="Perempuan" <?php if($data['Jenis_Kelamin']=='P') echo 'checked'?>>Perempuan</label>
+				</div>
+
+				<div class="mb-3">
+					<label for="exampleFormControlangkatan" class="form-label">Angkatan</label>
+					<input type="number" class="form-control" name="Angkatan" id="exampleFormControlankatan" value="<?php echo ($data['Angkatan']); ?>">
+				</div>
+
+
+				
+				<button type="submit" name="Simpan"  class="btn btn-primary">Update</button>
 
 
 
 
-				</form>
-			</div>
+			</form>
 		</div>
 	</div>
+</div>
 
 
 </body>
