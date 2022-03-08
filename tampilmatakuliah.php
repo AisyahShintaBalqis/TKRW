@@ -45,7 +45,7 @@ include ('koneksi.php');
 									<td><?php echo $data['sks'] ?></td>
 									<td><?php echo $data['semester'] ?></td>									
 									<td>
-										<a class="btn btn-success" href="">Edit</a>
+										<a class="btn btn-success" href="editmk.php?id=<?php echo $data["id"] ?>">Edit</a>
 										<a class="btn btn-danger" href=" ">Hapus</a>
 									</td>
 								</tr>

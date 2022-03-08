@@ -1,6 +1,6 @@
 <?php
 
-
+$id = $_POST['id']
 $nama = $_POST['nama'];
 $sks = $_POST['sks'];
 $semester = $_POST['semester'];
