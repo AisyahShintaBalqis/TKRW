@@ -25,6 +25,7 @@ include ('koneksi.php');
 				<table class="table table-hover">
 					<thead>
 						<tr>
+							<th>Id</th>
 							<th>Nama</th>
 							<th>SKS</th>
 							<th>Semester</th>							
@@ -38,15 +39,17 @@ include ('koneksi.php');
 
 						$simpan = "SELECT * FROM matakuliah";
 						$query = mysqli_query($conn, $simpan);
-						if (mysqli_num_rows($query) > 0) {
+						if (mysqli_num_rows($query) >= 1) {
 							while ($data = mysqli_fetch_assoc($query)) { ?>
 								<tr>
+									<td><?php echo $data['id'] ?></td>
 									<td><?php echo $data['nama'] ?></td>
 									<td><?php echo $data['sks'] ?></td>
 									<td><?php echo $data['semester'] ?></td>									
 									<td>
-										<a class="btn btn-success" href="editmk.php?id=<?php echo $data["id"] ?>">Edit</a>
-										<a class="btn btn-danger" href=" ">Hapus</a>
+										<a class="btn btn-success" href="editmk.php?id= <?php echo $data["id"] ?>">Edit</a>
+										
+										<a class="btn btn-danger" href="hapusmk.php?id= <?php echo $data["id"] ?>">Hapus</a>
 									</td>
 								</tr>
 							<?php }

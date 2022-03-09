@@ -1,6 +1,6 @@
 <?php
 
-$id = $_POST['id']
+$id = $_POST['id'];
 $nama = $_POST['nama'];
 $sks = $_POST['sks'];
 $semester = $_POST['semester'];
@@ -8,10 +8,10 @@ $semester = $_POST['semester'];
 include ('koneksi.php');
 
 
-$simpan="INSERT INTO matakuliah (nama, sks, semester) VALUES ('$nama', '$sks', '$semester')";
+$simpan="INSERT INTO matakuliah (id, nama, sks, semester) VALUES ('$id','$nama', '$sks', '$semester')";
 
 if (mysqli_query($conn, $simpan)) {
-	header('Location: tampilmatakuliah.php');
+	header('Location: tampilmk.php');
 	
 	
 }

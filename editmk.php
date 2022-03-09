@@ -1,16 +1,16 @@
 <?php
 include("koneksi.php");
 
-if(!isset($_GET['Nim']) ){
-	header('Location: tampilmhs.php');
+if(!isset($_GET['id']) ){
+	header('Location: tampilmk.php');
 }
 
-$Nim = $_GET['Nim'];
+$id = $_GET['id'];
 
-$sql = "SELECT * FROM mahasiswa WHERE Nim = '$Nim'";
+$sql = "SELECT * FROM matakuliah WHERE id = '$id'";
 $query = mysqli_query($conn, $sql);
 
-if(mysqli_num_rows($query) > 0){
+if(mysqli_num_rows($query) == 1){
 	$data = mysqli_fetch_array($query);
 }
 
@@ -33,15 +33,20 @@ if(mysqli_num_rows($query) > 0){
 			<div class="card-header bg-primary text-white">Form Input Data Matakuliah</div>
 			<div class="card-body">				
 
-				<form action="" method="POST">	
+				<form action="proses-editmk.php" method="POST">	
 
 					<div class="mb-3">
-						<label for="nama" class="form-label">Nama/label>
+						<label for="id" class="form-label">Id</label>
+						<input type="text" class="form-control" name="id" id="id"  value="<?php echo ($data['id']); ?>" >
+					</div>
+
+					<div class="mb-3">
+						<label for="nama" class="form-label">Nama</label>
 						<input type="text" class="form-control" name="nama" id="nama"  value="<?php echo ($data['nama']); ?>" >
 					</div>
 					<div class="mb-3">
 						<label for="jumlah_sks" class="form-label">Jumlah Sks</label>
-						<input type="text" class="form-control" name="jumlah_sks" id="jumlah_sks" value="<?php echo ($data['sks']); ?>"
+						<input type="text" class="form-control" name="sks" id="sks" value="<?php echo ($data['sks']); ?>"
 					</div>				
 
 				
@@ -52,7 +57,7 @@ if(mysqli_num_rows($query) > 0){
 
 
 				
-				<button type="submit" name="Simpan"  class="btn btn-primary">Update</button>
+				<button type="submit" name="Update"  class="btn btn-primary">Update</button>
 
 
 
