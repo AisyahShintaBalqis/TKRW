@@ -1,19 +1,17 @@
+
 <?php
-include("koneksi.php");
 
-if(!isset($_GET['id']) ){
-	echo "update gagal";
+include 'koneksi.php';
+
+if (!isset($_GET['id'])) {
+	header('location : index.php');
 }
-
 $id = $_GET['id'];
-
 $sql = "SELECT * FROM buku WHERE id = '$id'";
-$query = mysqli_query($conn, $sql);
-
-if(mysqli_num_rows($query) == 1){
-	$data = mysqli_fetch_array($query);
+$result = mysqli_query($conn, $sql);
+if (mysqli_num_rows($result) > 0) {
+	$data = mysqli_fetch_array($result);
 }
-
 ?>
 
 
@@ -45,28 +43,29 @@ if(mysqli_num_rows($query) == 1){
 						<input type="text" class="form-control" name="nama_penulis" id="nama_penulis" value="<?php echo ($data['nama_penulis']); ?>"
 					</div>				
 
-				
-				<div class="mb-3">
-					<label for="nama_penerbit" class="form-label">Nama Penerbit</label>
-					<input type="nama_penerbit" class="form-control" name="nama_penerbit" id="nama_penerbit" value="<?php echo ($data['nama_penerbit']); ?>">
-				</div>
 
-				<div class="mb-3">
-					<label for="jumlah" class="form-label">Jumlah</label>
-					<input type="jumlah" class="form-control" name="jumlah" id="jumlah" value="<?php echo ($data['jumlah']); ?>">
-				</div>
+					<div class="mb-3">
+						<label for="nama_penerbit" class="form-label">Nama Penerbit</label>
+						<input type="text" class="form-control" name="nama_penerbit" id="nama_penerbit" value="<?php echo ($data['nama_penerbit']); ?>">
+					</div>
 
-
-				
-				<button type="submit" name="Update"  class="btn btn-primary">Update</button>
+					<div class="mb-3">
+						<label for="jumlah" class="form-label">Jumlah</label>
+						<input type="text" class="form-control" name="jumlah" id="jumlah" value="<?php echo ($data['jumlah']); ?>">
+					</div>
 
 
 
+					<td><input type="hidden" name="id" value="<?php echo $data['id'] ?>"></td>
+					<button type="submit" class="btn btn-primary">Update</button>
 
-			</form>
+
+
+
+				</form>
+			</div>
 		</div>
 	</div>
-</div>
 
 
 </body>
