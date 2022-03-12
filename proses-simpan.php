@@ -15,7 +15,7 @@ if (mysqli_query($conn, $sql)) {
 	
 }
 else{
-	echo "Data gagal di simpan" . $sql . "<br>" . mysqli_error($koneksi) ;
+	echo "Data gagal di simpan" . $sql . "<br>" . mysqli_error($conn) ;
 }
 
 ?>

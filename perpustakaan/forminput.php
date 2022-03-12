@@ -30,7 +30,7 @@
 					</div>
 
 					<div class="mb-3">
-						<label class="form-label">Nam Penerbit</label>
+						<label class="form-label">Nama Penerbit</label>
 						<br>
 						<input type="text" class="form-control" name="nama_penerbit">
 

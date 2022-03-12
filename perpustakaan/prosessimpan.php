@@ -1,19 +1,28 @@
+
 <?php
 
+$id = $_POST['id'];
 $judul = $_POST['judul'];
 $nama_penulis = $_POST['nama_penulis'];
 $nama_penerbit = $_POST['nama_penerbit'];
 $jumlah = $_POST['jumlah'];
 
-include 'koneksi.php';
 
-$sql = "INSERT INTO buku(judul, nama_penulis, nama_penerbit, jumlah) VALUES ('$judul', '$nama_penulis', '$nama_penerbit', '$jumlah')";
+include ('koneksi.php');
 
-if (mysqli_query($conn, $sql)) {
-	echo "Simpan Data Berhasil";
+
+
+
+$simpan = "INSERT INTO buku VALUES('$id', '$judul', '$nama_penulis', '$nama_penerbit', '$jumlah')";
+
+if (mysqli_query($conn, $simpan)) {
+	
+	header('Location: tampilbuku.php');
+	
+	
 }
 else{
-	echo "Error";
+	echo "Data gagal di simpan" . $simpan . "<br>" . mysqli_error($conn) ;
 }
 
 ?>

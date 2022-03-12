@@ -58,10 +58,7 @@ if (mysqli_num_rows($result) > 0) {
 
 					<td><input type="hidden" name="id" value="<?php echo $data['id'] ?>"></td>
 					<button type="submit" class="btn btn-primary">Update</button>
-
-
-
-
+					
 				</form>
 			</div>
 		</div>
