@@ -20,6 +20,8 @@
 				<h1>Sistem Informasi Perpustakaan</h1>
 
 				<img src="image/1.jpg.jpg" height="250px" width="500px;" style="display:block; margin:auto;" />
+				<br>
+				<img src="image/2.jpg.jpg" height="250px" width="500px;" style="display:block; margin:auto;" />
 
 				<p>Sistem Informasi Manajemen Perpustakaan (e-library) merupakan sistem informasi yang dikembangkan untuk memudahkan dalam pelayanan serta memudahkan petugas perpustakaan dalam mengelola perpustakaan. Petugas perpustakaan dapat selalu memonitor tentang ketersediaan buku, daftar buku baru, peminjaman buku dan pengembalian buku.</p>
 
