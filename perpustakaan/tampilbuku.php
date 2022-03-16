@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<div class="col-md-6 mx-auto mt-5 container">
+	<div class="col-md-10 mx-auto mt-5 container">
 		<div class="card">
 			<div class="card-header bg-primary text-white">Data Buku</div>		
 

@@ -27,6 +27,8 @@
 
 				<p>Dengan sistem ini, peminjam buku maupun yang mengembalikan buku tidak perlu menunggu lama untuk proses peminjaman/pengembalian buku. Petugas perpustakaan pun tidak akan mengalami kesulitan dalam proses pelaporan kepada kepala perpustakaan. Sistem informasi perpustakaan yang berbasis webbase, memudahkan kita untuk mengakses perpustakaan online, bahkan mengetahui rekam jejak aktifitas pengunjung perpustakaan.</p>
 
+				<p>Tujuan dari pemakaian sistem data pada perpustakaan merupakan supaya bisa diakses dari mana saja tanpa dibatasi oleh jarak serta waktu, kilat serta akurat dalam melaksanakan sistem barcode pada perputaran, dibentuk memakai open source sehingga tanpa butuh memakai lisensi serta bertabiat free, informasi ditaruh secara terpusat pada server sehingga tiap orang bisa memakai data yang sama, proses pembaharuan informasi lebih lebih instan, serta pembuatan laporan bisa terbuat dengan lebih kilat sehingga memesatkan dalam pengambilan keputusan.</p>
+
 			</div>
 		</div>
 	</div>
